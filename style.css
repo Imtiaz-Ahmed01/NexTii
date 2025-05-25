@@ -1,0 +1,457 @@
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Marcellus", serif;
+}
+nav {
+  backdrop-filter: blur(12px);
+  min-height: 90px;
+  width: 100%;
+  border-bottom: 1px solid white;
+  border-radius: 25px;
+  color: white;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+nav .hamburgur {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  transform: translate(50%, -50%);
+  left: 20px;
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(0deg);
+  &:hover {
+    transform: rotate(180deg);
+    color: black;
+  }
+}
+nav ul {
+  display: flex;
+  gap: 19px;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+nav ul li {
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+}
+nav ul li::after {
+  transition: 0.3s ease-in-out;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 100%;
+  height: 4px;
+  border-radius: 30px;
+  width: 0%;
+  background-color: black;
+}
+nav ul li::before {
+  transition: 0.3s ease-in-out;
+  content: "";
+  position: absolute;
+  right: 1px;
+  top: 100%;
+  height: 4px;
+  border-radius: 30px;
+  width: 0px;
+  background-color: black;
+}
+nav ul li:hover::after {
+  width: 100%;
+}
+nav ul li:hover::before {
+  width: 100%;
+}
+
+nav .navlogo {
+  position: relative;
+  margin-right: 20px;
+  display: flex;
+}
+nav h1 {
+  font-size: 2.3rem;
+}
+nav img {
+  height: 100px;
+  position: absolute;
+  left: -80%;
+  top: -51%;
+  cursor: pointer;
+  width: auto;
+}
+nav h1 a {
+  text-decoration: none;
+  color: white;
+}
+nav button {
+  height: 50px;
+  width: 90px;
+  border: none;
+  outline: none;
+  font-weight: 600;
+  border-radius: 15px;
+  cursor: pointer;
+  background: linear-gradient(to bottom, #3498db, #2980b9);
+  font-size: 0.9rem;
+  color: white;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav button:hover {
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #2980b9, #3498db);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+nav button:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.slider {
+  height: calc(100vh - 70px);
+  width: 100%;
+  position: relative;
+  transition: 0.3s all ease;
+}
+.slider img {
+  height: 100vh;
+  position: absolute;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+.slider .increminenter {
+  height: 90px;
+  width: 50px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 50px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  color: white;
+  cursor: pointer;
+  transition: 0.4s ease;
+  &:hover {
+    transform: scale(1.1);
+    right: 1%;
+    color: black;
+  }
+}
+.slider .decreminenter {
+  height: 90px;
+  width: 50px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 50px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  color: white;
+  cursor: pointer;
+  transition: 0.4s ease;
+  &:hover {
+    transform: scale(1.1);
+    left: 1%;
+    color: black;
+  }
+}
+.login-page {
+  width: 500px;
+  height: 580px;
+  background: rgba(87, 87, 87, 0.7);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.4s ease;
+}
+.login-page.show {
+  opacity: 1;
+  visibility: visible;
+}
+.login-page > h1 {
+  font-size: 40px;
+  color: black;
+  align-items: center;
+  position: absolute;
+  top: 15%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.login-page > p {
+  font-size: 25px;
+  position: absolute;
+  top: 8px;
+  cursor: pointer;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  right: 18px;
+  color: black;
+}
+.login-page img {
+  height: 100px;
+  width: 100px;
+  align-items: center;
+  position: absolute;
+  top: 0;
+}
+.input-form {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 80%;
+  gap: 12px;
+  margin-top: 10%;
+}
+.input-form input {
+  margin-top: 30px;
+  background-color: transparent;
+  padding: 12px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  outline: none;
+  font-size: 1.3rem;
+  width: 100%;
+  color: snow;
+  position: relative;
+  transition: 0.3s ease-in-out;
+  display: flex;
+}
+.input-form span {
+  padding: 12px;
+  margin-top: -50px;
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: absolute;
+  left: 0;
+  font-size: 1.1rem;
+  color: rgba(0, 0, 0, 0.671);
+  pointer-events: none;
+  text-transform: uppercase;
+  transition: 0.3s ease-in-out;
+}
+.input-form input:valid ~ span,
+.input-form input:focus ~ span {
+  color: black;
+  transform: translateX(10px) translateY(-7px);
+  font-size: 0.9rem;
+  padding: 0 12px;
+  background-color: white;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+.input-form input:valid,
+.input-form input:focus {
+  border: 1px solid white;
+}
+.input-form p {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+.input-form p a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.input-form .login-btn {
+  height: 50px;
+  width: 100%;
+  background-color: rgb(47, 47, 48);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  position: relative;
+  bottom: -50%;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 1.3rem;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    background-color: rgb(40, 40, 47);
+  }
+  &:active {
+    background-color: rgb(0, 0, 0);
+  }
+}
+.input-form p:last-child {
+  color: white;
+  position: relative;
+  bottom: 0;
+  left: 70px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.hamburgur-links {
+  height: 100vh;
+  width: 50vw;
+  z-index: 1000;
+  background-color: rgba(87, 87, 87, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(-100%);
+}
+.hamburgur-links.show3 {
+  transform: translateX(0);
+}
+.hamburgur-links.hide {
+  transform: translateX(-100%);
+}
+.hamburgur-links ul {
+  list-style: none;
+  color: white;
+  text-transform: uppercase;
+  transition: 0.3s ease-in-out;
+}
+.hamburgur-links ul li {
+  margin-top: 50px;
+  font-size: 1.2rem;
+  transition: 0.3s ease-in-out;
+  position: relative;
+  font-weight: 600;
+  &:hover {
+    color: black;
+  }
+}
+.hamburgur-links ul li::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  border-radius: 30px;
+  right: -50%;
+  top: 120%;
+  width: 0;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+.hamburgur-links ul li::before {
+  content: "";
+  transition: all 0.3s ease;
+  position: absolute;
+  left: -50%;
+  height: 4px;
+  border-radius: 30px;
+  bottom: 120%;
+  width: 0;
+  background-color: white;
+}
+.hamburgur-links ul li:hover::after {
+  width: 100%;
+  right: 0;
+}
+.hamburgur-links ul li:hover::before {
+  width: 100%;
+  left: 0;
+}
+.hamburgur-links i {
+  font-size: 2.5rem;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+  &:hover {
+    color: black;
+  }
+}
+.ham-links {
+  display: none;
+}
+/* Reponsiveness */
+@media screen and (max-width: 1100px) {
+  nav .navlogo {
+    left: 40px;
+  }
+}
+@media screen and (max-width: 830px) {
+  nav .navlogo {
+    left: 60px;
+  }
+  nav ul {
+    display: flex;
+    gap: 14px;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .slider .increminenter,
+  .slider .decreminenter {
+    font-size: 1.5rem;
+  }
+  .slider img {
+    object-fit: cover;
+  }
+  .login-page {
+    width: 300px;
+    height: 450px;
+  }
+  .input-form p:last-child {
+    left: 0;
+    font-size:1rem;
+  }
+  .input-form{
+    margin-top:30%;
+  }
+}
+@media screen and (max-width: 780px) {
+  nav ul {
+    display: none;
+  }
+  nav button {
+    position: absolute;
+    transform: translate(50%, -50%);
+    right: 60px;
+  }
+
+  nav .navlogo {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    top: 4%;
+  }
+
+  nav .hamburgur {
+    display: inline;
+    position: absolute;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    transition: 0.3s ease-in-out;
+  }
+  nav img {
+    height: 70px;
+  }
+  nav h1 {
+    font-size: 1.9rem;
+  }
+  nav button {
+    height: 40px;
+    width: 70px;
+    font-size:0.7rem;
+  }
+}

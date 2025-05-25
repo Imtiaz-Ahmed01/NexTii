@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - NexTii</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <nav>
+      <i onclick="openMenu()" class="fa-solid fa-bars hamburgur"></i>
+      <div class="navlogo">
+        <img src="./logo1.png" />
+        <h1><a href="#">NexTii</a></h1>
+      </div>
+      <div class="navlinks">
+        <ul>
+          <li>Home</li>
+          <li>Locations</li>
+          <li>Tours</li>
+          <li>Videos</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+      <div class="login">
+        <button onclick="Pop()" id="loginPop">LOG IN</button>
+      </div>
+    </nav>
+    <section>
+      <div class="slider">
+        <img id="slider" src="./img-1.jpg" alt="LOADING" />
+        <button
+          onclick="increaseImg()"
+          class="increminenter"
+          id="increminenter"
+        >
+          &gt;
+        </button>
+        <button
+          onclick="decreaseImg()"
+          class="decreminenter"
+          id="decreminenter"
+        >
+          &lt;
+        </button>
+      </div>
+    </section>
+    <div
+      style="
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        padding: 1.5rem;
+        border-radius: 1rem;
+      "
+    >
+      <h2 style="font-size: 3rem; margin-bottom: 1rem">Welcome to NexTii</h2>
+      <p style="font-size: 1.5rem">
+        NexTii is your gateway to breathtaking adventures and unforgettable
+        memories. Explore curated tours, stunning destinations, and immersive
+        videos designed to ignite your wanderlust.
+      </p>
+    </div>
+
+    <div class="disable login-page">
+      <p onclick="Pop()">X</p>
+      <img src="./logo1.png" />
+      <h1>Login</h1>
+      <div class="input-form">
+        <div class="form-email">
+          <input type="text" required="required" autocomplete="on" /><span
+            >Email</span
+          >
+        </div>
+        <div class="form-password">
+          <input type="password" required="required" autocomplete="off" /><span
+            >Password</span
+          >
+        </div>
+        <p><a href="#">Forgot Password?</a></p>
+        <button class="login-btn">Login</button>
+        <p>Don't have an account? <a href="#">Sign Up</a></p>
+      </div>
+    </div>
+
+    <div id="ham-show" class="hamburgur-links">
+      <i onclick="openMenu()" class="fa-solid fa-times hamburgur-close"></i>
+      <ul>
+        <li>Home</li>
+        <li>Locations</li>
+        <li>Tours</li>
+        <li>Videos</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
